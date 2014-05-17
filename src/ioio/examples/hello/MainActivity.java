@@ -16,6 +16,8 @@ import ioio.lib.util.android.IOIOActivity;
 import android.graphics.DashPathEffect;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 /**
@@ -27,6 +29,8 @@ public class MainActivity extends IOIOActivity
 {
 	private ToggleButton button_;
 	public UltraSonicSensor sonar;
+	private TextView mText;
+	private ScrollView mScroller;
 
 	/**
 	 * Called when the activity is first created. Here we normally initialize
@@ -38,6 +42,8 @@ public class MainActivity extends IOIOActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		button_ = (ToggleButton) findViewById(R.id.button);
+		mText = (TextView)findViewById(R.id.logText);
+		mScroller = (ScrollView)findViewById(R.id.scroller);
 	}
 
 	/**
@@ -126,6 +132,7 @@ public class MainActivity extends IOIOActivity
 					leftMotorClock.write(true);
 					leftMotorClock.write(false);
 					sonar.read();
+					MainActivity.this.log("left distance="+sonar.getLeftDistance());
 
 				} catch (InterruptedException e)
 				{
@@ -145,5 +152,20 @@ public class MainActivity extends IOIOActivity
 	protected IOIOLooper createIOIOLooper()
 	{
 		return new Looper();
+	}
+	/**
+	 * Writes a message to the Dashboard instance.
+	 * 
+	 * @param msg
+	 *            the message to write
+	 */
+	public void log(final String msg) {
+		runOnUiThread(new Runnable() {
+			public void run() {
+				mText.append(msg);
+				mText.append("\n");
+				mScroller.smoothScrollTo(0, mText.getBottom());
+			}
+		});
 	}
 }

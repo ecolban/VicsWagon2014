@@ -4,10 +4,22 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
+  <TextView  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     android:id="@+id/title"/>
-<ToggleButton android:text="ToggleButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button"></ToggleButton>
+  <ToggleButton android:text="ToggleButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button"></ToggleButton>
+
+  <ScrollView android:id="@+id/scroller"
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent"
+                android:background="@drawable/box">
+        <TextView android:id="@+id/logText"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:paddingBottom="8dip" 
+                  android:layout_weight="1" />
+  </ScrollView>
+    
 </LinearLayout>
