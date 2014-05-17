@@ -123,23 +123,24 @@ public class MainActivity extends IOIOActivity
 		{
 			if (button_.isChecked())
 			{
+				led_.write(false);
 				try
 				{
 					Thread.sleep(1000);
-					led_.write(true);
-					rightMotorClock.write(true);
-					rightMotorClock.write(false);
-					leftMotorClock.write(true);
-					leftMotorClock.write(false);
-					sonar.read();
-					MainActivity.this.log("left distance="+sonar.getLeftDistance());
+//					led_.write(true);
+//					rightMotorClock.write(true);
+//					rightMotorClock.write(false);
+//					leftMotorClock.write(true);
+//					leftMotorClock.write(false);
+//					sonar.read();
+					log("loop");
 
 				} catch (InterruptedException e)
 				{
 				}
 			} else
 			{
-				led_.write(false);
+				led_.write(true);
 			}
 		}
 	}
