@@ -132,8 +132,8 @@ public class MainActivity extends IOIOActivity
 //					rightMotorClock.write(false);
 //					leftMotorClock.write(true);
 //					leftMotorClock.write(false);
-//					sonar.read();
-					log("loop");
+					sonar.read();
+					log(String.valueOf(sonar.getFrontDistance() + " " + sonar.getLeftDistance()));
 
 				} catch (InterruptedException e)
 				{
