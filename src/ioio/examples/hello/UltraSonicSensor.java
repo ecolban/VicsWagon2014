@@ -1,7 +1,7 @@
 package ioio.examples.hello;
 
 /**************************************************************************
- * Happy version 140430A...ultrasonics working
+ * Happy version 140517A...ultrasonics working
  **************************************************************************/
 import ioio.lib.api.DigitalOutput;
 import ioio.lib.api.IOIO;

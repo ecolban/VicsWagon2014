@@ -1,6 +1,6 @@
 package ioio.examples.hello;
 /**************************************************************************
- * Happy version 140430A...ultrasonics and motors working
+ * Happy version 140517A...ultrasonics and motors working
  **************************************************************************/
 import ioio.lib.api.DigitalOutput;
 import ioio.lib.api.PwmOutput;
