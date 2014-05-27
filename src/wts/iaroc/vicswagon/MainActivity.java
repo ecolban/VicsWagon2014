@@ -1,8 +1,9 @@
-package ioio.examples.hello;
+package wts.iaroc.vicswagon;
 
 /**************************************************************************
  * Happy version 140517A...ultrasonics and motors working
  **************************************************************************/
+import ioio.examples.hello.R;
 import ioio.lib.api.DigitalOutput;
 import ioio.lib.api.PwmOutput;
 import ioio.lib.api.Sequencer;
